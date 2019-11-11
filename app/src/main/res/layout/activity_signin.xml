@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background2"
+    android:gravity="center"
+    >
+
+    <TextView
+        android:id="@+id/Text1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="第一次餐廳訂位?"
+        android:fontFamily="sans-serif"
+        android:textColor="#ffffff"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        />
+
+    <EditText
+        android:id="@+id/et1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="怎麼稱呼您?"
+        android:fontFamily="sans-serif"
+        android:textColorHint="#b3b3b3"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:layout_marginTop="20dp"
+        android:layout_below="@id/Text1"
+        />
+    <EditText
+        android:id="@+id/et2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="輸入您的電話"
+        android:fontFamily="sans-serif"
+        android:textColorHint="#b3b3b3"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:layout_below="@id/et1"
+        />
+
+
+    <Button
+        android:id="@+id/btn_start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="準備好開始訂位"
+        android:textSize="14sp"
+        android:textColor="#ffffff"
+        android:layout_below="@id/et2"
+        android:background="@drawable/btn_shape"
+        android:layout_marginTop="20dp"
+        android:padding="0dp"
+        android:minHeight="30sp"
+
+        />
+</RelativeLayout>

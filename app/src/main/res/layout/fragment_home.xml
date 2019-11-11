@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@android:color/white">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        android:fitsSystemWindows="true"
+        android:background="#FFF"
+        >
+        <android.support.design.widget.CollapsingToolbarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed"
+            app:contentScrim="#FFF"
+            app:expandedTitleTextAppearance="@android:color/transparent"
+            android:fitsSystemWindows="true"
+            app:titleEnabled="false">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="150dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/background3"
+                />
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+                app:layout_collapseMode="pin"
+                >
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <Button
+                        android:id="@+id/search_button"
+                        android:background="@drawable/search"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginLeft="10dp"
+                        />
+
+                    <EditText
+                        android:id="@+id/ET_search"
+                        android:background="@drawable/btn_shape2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:hint="搜尋"
+                        android:layout_toRightOf="@id/search_button"
+                        android:layout_alignTop="@id/search_button"
+                        android:gravity="center"
+                        />
+
+                    <ImageView
+                        android:id="@+id/voice_icon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/ic_mic_black_24dp"
+
+                        android:layout_alignTop="@id/ET_search"
+                        android:layout_toRightOf="@id/ET_search"
+                        android:onClick= "getSpeechInput" />
+
+                    <Button
+                        android:id="@+id/search_person"
+                        android:layout_width="40sp"
+                        android:layout_height="30sp"
+                        android:textColor="#99000000"
+                        android:background="@android:color/transparent"
+                        android:text="人數"
+                        android:layout_alignLeft="@id/ET_search"
+                        android:layout_below="@id/ET_search"
+                        />
+
+                    <Button
+                        android:id="@+id/search_date"
+                        android:layout_width="40sp"
+                        android:layout_height="30sp"
+                        android:textColor="#99000000"
+                        android:background="@android:color/transparent"
+                        android:text="日期"
+                        android:layout_toRightOf="@id/search_person"
+                        android:layout_below="@id/ET_search"
+                        android:layout_marginBottom="5dp"
+                        />
+
+
+
+
+                </RelativeLayout>
+
+
+
+
+            </android.support.v7.widget.Toolbar>
+        </android.support.design.widget.CollapsingToolbarLayout>
+
+    </android.support.design.widget.AppBarLayout>
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clipToPadding="false"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:cardElevation="5dp"
+            app:cardUseCompatPadding="true">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="25sp"
+                    android:text="上次訂購"
+                    android:textColor="@android:color/darker_gray"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="5dp"
+                    android:id="@+id/上次訂購"
+                    />
+
+                <android.support.v7.widget.RecyclerView
+                    android:layout_width="match_parent"
+                    android:layout_height="160dp"
+                    android:id="@+id/RV_上次訂購"
+                    android:layout_below="@id/上次訂購"
+                    android:orientation="horizontal"
+                    android:scrollbars="horizontal"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="25sp"
+                    android:text="優惠專區"
+                    android:textColor="@android:color/darker_gray"
+                    android:layout_alignLeft="@id/上次訂購"
+                    android:layout_below="@id/RV_上次訂購"
+                    android:layout_marginTop="30dp"
+                    android:id="@+id/優惠專區"
+                    />
+
+                <android.support.v7.widget.RecyclerView
+                    android:layout_width="match_parent"
+                    android:layout_height="160dp"
+                    android:id="@+id/RV_優惠專區"
+                    android:layout_below="@id/優惠專區"
+                    android:orientation="horizontal"
+                    android:scrollbars="horizontal"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="25sp"
+                    android:text="附近的美食"
+                    android:textColor="@android:color/darker_gray"
+                    android:layout_below="@id/RV_優惠專區"
+                    android:layout_alignLeft="@id/上次訂購"
+                    android:layout_marginTop="30dp"
+                    android:id="@+id/附近的美食"
+                    />
+
+                <android.support.v7.widget.RecyclerView
+                    android:layout_width="match_parent"
+                    android:layout_height="160dp"
+                    android:id="@+id/RV_附近的美食"
+                    android:layout_below="@id/附近的美食"
+                    android:orientation="horizontal"
+                    android:scrollbars="horizontal"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="25sp"
+                    android:text="最新餐廳"
+                    android:textColor="@android:color/darker_gray"
+                    android:layout_below="@id/RV_附近的美食"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="30dp"
+                    android:id="@+id/最新餐廳"
+                    />
+
+                <android.support.v7.widget.RecyclerView
+                    android:layout_width="match_parent"
+                    android:layout_height="160dp"
+                    android:id="@+id/RV_最新餐廳"
+                    android:layout_below="@id/最新餐廳"
+                    android:orientation="horizontal"
+                    android:scrollbars="horizontal"/>
+
+
+
+
+            </RelativeLayout>
+        </android.support.v7.widget.CardView>
+
+
+
+    </android.support.v4.widget.NestedScrollView>
+
+
+
+</android.support.design.widget.CoordinatorLayout>
